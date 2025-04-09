@@ -10,7 +10,7 @@ epl = pd.read_csv("EPL22.csv", encoding='latin1')
 # print(epl.info())
 # print(epl.describe())
 
-print(epl.isna().sum())
+# print(epl.isna().sum())
 
 #data cleaning
 dependent_columns = ['Min', '90s', 'Gls', 'Ast', 'G-PK','PK','PKatt','CrdY','CrdR','Gls.1','Ast.1','G+A','G-PK.1','G+A-PK'
@@ -29,4 +29,22 @@ epl.loc[epl['MP'] == 0, dependent_columns] = epl.loc[epl['MP'] == 0, dependent_c
 # print(epl.isna().sum())
 
 epl=epl.dropna()
-print(epl.isna().sum())
+# print(epl.isna().sum())
+
+Total_Goals= int(epl['Gls'].sum())
+print('Total Goals Scored in 2021/22: ',Total_Goals)
+
+Total_Assists = int(epl['Ast'].sum())
+print('Total Assists in 2021/22: ',Total_Goals)
+
+Total_Penalty = int(epl['PKatt'].sum())
+print('Total penalties attempted in 2021/22: ',Total_Penalty)
+
+Penalty_Scored = int(epl['PK'].sum())
+print('Total penalties scored in 2021/22: ',Penalty_Scored)
+
+Penalty_Missed = Total_Penalty - Penalty_Scored
+print('Total penalties missed in 2021/22: ',Penalty_Missed)
+
+Y_card = int(epl['CrdY'].sum())
+print('Total yellow cards in 2021/22: ',Penalty_Missed)
