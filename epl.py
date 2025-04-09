@@ -3,6 +3,7 @@ import numpy as np
 import math
 import pandas as pd
 import seaborn as sns
+pd.set_option('future.no_silent_downcasting', True)
 
 epl = pd.read_csv("EPL22.csv", encoding='latin1')
 
@@ -47,4 +48,12 @@ Penalty_Missed = Total_Penalty - Penalty_Scored
 print('Total penalties missed in 2021/22: ',Penalty_Missed)
 
 Y_card = int(epl['CrdY'].sum())
-print('Total yellow cards in 2021/22: ',Penalty_Missed)
+print('Total yellow cards in 2021/22: ',Y_card)
+
+R_card = int(epl['CrdR'].sum())
+print('Total red cards in 2021/22: ',R_card)
+
+Total_cards = Y_card + R_card
+print('Total bookable offense in 2021/22: ',Total_cards)
+
+
