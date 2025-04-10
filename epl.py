@@ -56,4 +56,27 @@ print('Total red cards in 2021/22: ',R_card)
 Total_cards = Y_card + R_card
 print('Total bookable offense in 2021/22: ',Total_cards)
 
+#plots
+# plt.figure(figsize=(13,6))
+# pendata=(Penalty_Missed, Penalty_Scored)
+# labels= ['Penalties Missed','Penalties Scored']
+# color= sns.color_palette('Set2')
+# plt.pie(pendata, colors=color, labels=labels, autopct='%.0f%%')
+# plt.title('Penalty Conversion Rate')
+# plt.show()
 
+# plt.figure()
+# goal_data = [Total_Goals-Total_Assists, Total_Assists]
+# lab = ["Goals without assists", "Goals with assists"]
+# col = sns.color_palette("Set3")
+# plt.pie(goal_data,colors=col,labels=lab, autopct= "%.0f%%")
+# plt.title("Goals with or without assists")
+# plt.show()
+
+plt.figure()
+data = [R_card,Y_card]
+l = ["RedCard", "YellowCard"]
+c = ['red', 'yellow']
+plt.pie(data, colors=c, labels=l, autopct="%.0f%%")
+plt.title("Disciplinary Cautions")
+plt.show()
